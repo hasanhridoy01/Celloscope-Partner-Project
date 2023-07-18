@@ -7,9 +7,13 @@ const mongoose = require("mongoose");
 app.use(express.json());
 app.use(cors());
 
+//Product Route....!
+const basicRoute = require('./routes/basicinformation.route');
+app.use('/api/v1/basicinfo', basicRoute);
+
 //Test Route
 app.get("/", (rep, res) => {
-  rep.send("Route is working! YaY");
+  res.send("Route is working! YaY@");
 });
 
 module.exports = app;
