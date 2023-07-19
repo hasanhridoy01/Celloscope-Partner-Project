@@ -1,7 +1,7 @@
 <!-- Navbar-start -->
 <nav class="navbar navbar-expand-lg bg-body-tertiary p-3" data-bs-theme="tertiary">
   <div class="container">
-    <a class="navbar-brand text-danger" href="#" style="font-family: 'Courier New', Courier, monospace; font-weight: 900; font-size: 28px;">Cellscope</a>
+    <a class="navbar-brand text-danger" href="#" style="font-family: 'Courier New', Courier, monospace; font-weight: 900; font-size: 28px;">Celloscope</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -28,7 +28,8 @@
         <h2 class="pt-3 pb-0">Dashboard</h2>
         <div class="card shadow-lg">
           <div class="card-body">
-            <button class="btn btn-outline-danger mb-2 mt-1">Add New Patner</button>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-outline-danger mb-2 mt-1" data-bs-toggle="modal" data-bs-target="#exampleModal">Add New Patner</button>
             <h2>All Data</h2>
             <table class="table table-striped">
               <thead>
@@ -115,6 +116,150 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header" style="background: #ebf5fc;">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Create Partner</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="accordion" id="accordionExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Basic Information
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <div class="form-group mt-2">
+                  <label for="exampleInputEmail1">Partner Name</label>
+                  <input type="text" class="form-control" placeholder="Enter Name">
+                </div> 
+
+                <div class="form-group mt-2">
+                  <label for="exampleInputEmail1">Joining Date</label>
+                  <input type="date" class="form-control">
+                </div>
+
+                <div class="form-group mt-2">
+                  <label for="exampleInputEmail1">Account Number</label>
+                  <input type="text" class="form-control" placeholder="Enter Account Number">
+                </div>
+                
+                <div class="form-group mt-2">
+                  <label for="Partner Type">Partner Type</label>
+                  <select class="custom-select form-control mb-2" id="inputGroupSelect02">
+                    <option selected value="IGW">IGW</option>
+                    <option value="ICX">ICX</option>
+                    <option value="IOS">IOS</option>
+                    <option value="ANS">ANS</option>
+                    <option value="INT">INT</option>
+                  </select>
+                </div>
+                
+                <div class="form-group mt-2">
+                  <label for="Currency">Currency</label>
+                  <select class="custom-select form-control mb-2" id="inputGroupSelect02">
+                    <option selected value="BDT">BDT</option>
+                    <option value="USD">USD</option>
+                  </select>
+                </div>
+                
+                <div class="form-group mt-2">
+                  <label for="TimeZone">TimeZone</label>
+                  <select class="custom-select form-control mb-2" id="inputGroupSelect02">
+                    <option selected value="Coordinated Universal Time (UTC)">Coordinated Universal Time (UTC)</option>
+                    <option value="Greenwich Mean Time (GMT)">Greenwich Mean Time (GMT)</option>
+                    <option value="Eastern Standard Time (EST)">Eastern Standard Time (EST)</option>
+                    <option value="Central Standard Time (CST)">Central Standard Time (CST)</option>
+                    <option value="Mountain Standard Time (MST)">Mountain Standard Time (MST)</option>
+                    <option value="Pacific Standard Time (PST)">Pacific Standard Time (PST)</option>
+                    <option value="India Standard Time (IST)">India Standard Time (IST)</option>
+                    <option value="China Standard Time (CST)">China Standard Time (CST)</option>
+                  </select>
+                </div>
+                
+                <div class="form-group mt-2">
+                  <label for="Billing Cycle">Billing Cycle</label>
+                  <select class="custom-select form-control mb-2" id="inputGroupSelect02">
+                    <option selected value="Monthly">Monthly</option>
+                    <option value="Weekly">Weekly</option>
+                    <option value="Yearly">Yearly</option>
+                  </select>
+                </div>
+                
+                <div class="form-group mt-2">
+                  <label for="Status">Status</label>
+                  <select class="custom-select form-control mb-2" id="inputGroupSelect02">
+                    <option selected value="Active">Active</option>
+                    <option value="Inactive">Inactive</option>
+                    <option value="Suspended">Suspended</option>
+                  </select>
+                </div>
+          
+                <button type="button" class="btn btn-primary mt-1">Add</button>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Partner Details
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <div class="form-group mt-2">
+                  <label for="exampleInputEmail1">Partner Phone Number</label>
+                  <input type="text" class="form-control" placeholder="Enter Name">
+                </div> 
+          
+                <div class="form-group mb-1 mt-1">
+                  <label for="exampleInputEmail1">Partner Email address</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                </div>
+                
+                <div class="form-group mb-1 mt-1">
+                  <label for="exampleInputEmail1">Partner Email address</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                </div>
+          
+                <button type="button" class="btn btn-danger mt-1">Add</button>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Account Manager Information
+              </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <div class="form-group mt-2">
+                  <label for="exampleInputEmail1">Partner Name</label>
+                  <input type="text" class="form-control" placeholder="Enter Name">
+                </div> 
+          
+                <div class="form-group mb-1 mt-1">
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                </div>
+          
+                <button type="button" class="btn btn-success mt-1">Add</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer" style="background: #ebf5fc;"></div>
     </div>
   </div>
 </div>
