@@ -15,7 +15,7 @@ const routes: Routes = [
 
   //set route dashboard components...........!
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-  { path: 'dashboard', component: DashboardComponent},
+  { path: 'dashboard', component: DashboardComponent }
 ]; 
 
 @NgModule({

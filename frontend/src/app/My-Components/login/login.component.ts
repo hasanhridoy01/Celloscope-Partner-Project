@@ -24,6 +24,21 @@ export class LoginComponent {
       alert("Please Enter Your Password");
       return;
     }
+    //Get User Information...!
+    const user = {
+      email: this.email
+    };
+    //Get Jwt Token....!
+    fetch('http://localhost:5000/jwt', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(user)
+    }).then(res => res.json()).then(data => {
+      //Set Local Storage
+      localStorage.setItem('token', data.token);
+    })
     //Email&Password Send Form Firebase...!
     this.auth.login(this.email, this.password);
     //Default Send...!
