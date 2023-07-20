@@ -10,7 +10,11 @@ const basicinformationSchema = mongoose.Schema({
     minLength: [3, "Name must be at least 3 character!"],
     maxLength: [100, "Name is to large!"]
   },
-  joining: {
+  description: {
+    type: String, 
+    required: [true, "Please provide a some text with description"],
+  },
+  price: {
     type: Number,
     required: [true, "Please provide a minimum-maximum price on your product"],
     min: [0, "Price can't be negative!"],
