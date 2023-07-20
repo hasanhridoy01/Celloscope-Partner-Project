@@ -19,7 +19,7 @@ exports.getInfo = async(req, res, next) => {
   //   });
   // }
   res.status(400).json({
-    status: 'Basicinformation',
+    status: 'Failed',
     message: "your don't find the info",
   });
 };

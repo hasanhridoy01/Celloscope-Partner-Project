@@ -1,7 +1,7 @@
-const Basicinformation = require('../models/Basicinformation');
+const AccoutManagerInfo = require('../models/AccoutManagerInfo');
 
-//Get all info from Database...............!
-exports.getInfo = async(req, res, next) => {
+//Get all AccoutManagerInfo from Database...............!
+exports.getAccoutManagerInfo = async(req, res, next) => {
   // try {
   //   const basicinformation = await Basicinformation.find({});
   //   //Response Send a message with user...!
@@ -19,13 +19,13 @@ exports.getInfo = async(req, res, next) => {
   //   });
   // }
   res.status(400).json({
-    status: 'Basicinformation',
+    status: 'AccoutManagerInfo',
     message: "your don't find the info",
   });
 };
 
-//Create a new info form Database.............!
-// exports.createInfo = async(req, res, next) => {
+//Create a new AccoutManagerInfo form Database.............!
+// exports.createAccoutManagerInfo = async(req, res, next) => {
 //   try {
 //     //Create or Save..!
 //     const basicinformation = new Basicinformation(req.body);
