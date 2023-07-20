@@ -4,7 +4,6 @@ const partnerController = require('../controllers/partnerdetails.controller');
 
 //Basic Router
 router.route('/')
-.get(partnerController.getPartnerDetails)
-.post(partnerController.createPartnerDetails)
+.get(partnerController.getPartnerDetails);
 
 module.exports = router;

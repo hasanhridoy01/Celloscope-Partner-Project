@@ -5,6 +5,5 @@ const accountmanagerinfoController = require('../controllers/accountmanager.cont
 //Basic Router
 router.route('/')
 .get(accountmanagerinfoController.getAccoutManagerInfo)
-.post(accountmanagerinfoController.createAccoutManagerInfo)
 
 module.exports = router;

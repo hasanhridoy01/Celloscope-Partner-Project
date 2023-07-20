@@ -12,6 +12,7 @@ const basicinformationSchema = mongoose.Schema({
   },
   joining: {
     name: String,
+    require: true,
     birthDate: { type: Number, default: Date.now }
   },
   accountnumber: {
@@ -39,7 +40,7 @@ const basicinformationSchema = mongoose.Schema({
     required: [true, "Please you have status this info"],
     enum: {
       values: ["active","inactive","suspended"],
-      message: "Status can't"
+      message: "Status can't br {VALUE}"
     }
   },
   createAt: {

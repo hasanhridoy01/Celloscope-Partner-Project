@@ -43,7 +43,7 @@ app.use('/api/v1/partnerdetails', partnerdetailsRoute);
 
 //AccountManagerInfo Route....!
 const accountmanagerinfoRoute = require('./routes/accountmanager.route');
-app.use('/api/v1/accountmanagerinfo', accountmanagerinfoRoute);
+app.use('/api/v1/accountmanagerinfoRoute', accountmanagerinfoRoute);
 
 //Test Route
 app.get("/", (rep, res) => {

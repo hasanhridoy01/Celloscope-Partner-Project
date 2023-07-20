@@ -11,10 +11,12 @@ const PartnerDetailsSchema = mongoose.Schema({
     maxLength: [100, "Partner Phone Number is to large!"]
   },
   partneremailaddress: {
-    name: String
+    name: String,
+    require: [true, "Please provide Partner Email address"],
   },
   partnernotificationemail: {
-    name: String
+    name: String,
+    require: [true, "Please provide Partner Notification E-mail"],
   },
   VATregnumber: {
     type: Number,

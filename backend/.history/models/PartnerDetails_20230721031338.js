@@ -14,7 +14,8 @@ const PartnerDetailsSchema = mongoose.Schema({
     name: String
   },
   partnernotificationemail: {
-    name: String
+    name: String,
+    require: true,
   },
   VATregnumber: {
     type: Number,

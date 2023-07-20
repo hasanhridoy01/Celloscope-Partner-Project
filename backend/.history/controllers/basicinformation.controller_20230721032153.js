@@ -26,7 +26,7 @@ exports.getInfo = async(req, res, next) => {
 
 //Create a new info form Database.............!
 exports.createInfo = async(req, res, next) => {
-  console.log(req.body);
+  console.log('basic info done');
   // try {
   //   //Create or Save..!
   //   const basicinformation = new Basicinformation(req.body);

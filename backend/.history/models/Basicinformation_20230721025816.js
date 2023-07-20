@@ -12,6 +12,7 @@ const basicinformationSchema = mongoose.Schema({
   },
   joining: {
     name: String,
+    require: true,
     birthDate: { type: Number, default: Date.now }
   },
   accountnumber: {

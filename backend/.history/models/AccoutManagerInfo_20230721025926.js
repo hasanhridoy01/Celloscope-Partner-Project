@@ -3,7 +3,8 @@ const mongoose = require("mongoose");
 //Schema Design.....!
 const AccoutManagerInfoSchema = mongoose.Schema({
     managerID: {
-    name: Number
+    name: Number,
+    require: [true, "Please provide a Manager ID"]
   },
   managername: {
     type: String,
@@ -19,9 +20,11 @@ const AccoutManagerInfoSchema = mongoose.Schema({
   },
   manageremail: {
     name: String,
+    require: [true, "Please provide Manager E-mail"],
   },
   systementrydate: {
     name: String,
+    require: [true, "Please provide System Entry Date"],
     birthDate: { type: Number, default: Date.now }
   },
   createAt: {

@@ -37,14 +37,6 @@ app.post('/jwt', (req, res) => {
 const basicRoute = require('./routes/basicinformation.route');
 app.use('/api/v1/basicinfo', basicRoute);
 
-//PartnerDetails Route....!
-const partnerdetailsRoute = require('./routes/partnerdetails.route');
-app.use('/api/v1/partnerdetails', partnerdetailsRoute);
-
-//AccountManagerInfo Route....!
-const accountmanagerinfoRoute = require('./routes/accountmanager.route');
-app.use('/api/v1/accountmanagerinfo', accountmanagerinfoRoute);
-
 //Test Route
 app.get("/", (rep, res) => {
   res.send("Route is working! YaY@");

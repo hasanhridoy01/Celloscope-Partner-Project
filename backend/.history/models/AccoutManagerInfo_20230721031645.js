@@ -3,7 +3,8 @@ const mongoose = require("mongoose");
 //Schema Design.....!
 const AccoutManagerInfoSchema = mongoose.Schema({
     managerID: {
-    name: Number
+    name: Number,
+    require: [true, "Please provide a Manager ID"]
   },
   managername: {
     type: String,
