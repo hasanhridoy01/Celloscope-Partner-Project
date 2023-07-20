@@ -44,6 +44,7 @@
                 </tr>
               </thead>
               <tbody>
+
                 <tr>
                   <td>1</td>
                   <td>Asraful Haque</td>
@@ -52,65 +53,11 @@
                   <td>Mirpur</td>
                   <td>active</td>
                   <td>
-                    <a class="btn btn-sm btn-info" href="#">View</a>
-                    <a class="btn btn-sm btn-warning" href="#" style="margin-left: 6px; margin-right: 6px;">Edit</a>
+                    <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal1" style="margin-left: 5px; margin-right: 5px;">Edit</button>
                     <a class="btn btn-sm btn-danger" href="#">Delete</a>
                   </td>
                 </tr>
-                <tr>
-                  <td>1</td>
-                  <td>Asraful Haque</td>
-                  <td>haq@gmail.com</td>
-                  <td>01717700811</td>
-                  <td>Mirpur</td>
-                  <td>active</td>
-                  <td>
-                    <a class="btn btn-sm btn-info" href="#">View</a>
-                    <a class="btn btn-sm btn-warning" href="#" style="margin-left: 6px; margin-right: 6px;">Edit</a>
-                    <a class="btn btn-sm btn-danger" href="#">Delete</a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>Asraful Haque</td>
-                  <td>haq@gmail.com</td>
-                  <td>01717700811</td>
-                  <td>Mirpur</td>
-                  <td>active</td>
-                  <td>
-                    <a class="btn btn-sm btn-info" href="#">View</a>
-                    <a class="btn btn-sm btn-warning" href="#" style="margin-left: 6px; margin-right: 6px;">Edit</a>
-                    <a class="btn btn-sm btn-danger" href="#">Delete</a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>Asraful Haque</td>
-                  <td>haq@gmail.com</td>
-                  <td>01717700811</td>
-                  <td>Mirpur</td>
-                  <td>active</td>
-                  <td>
-                    <a class="btn btn-sm btn-info" href="#">View</a>
-                    <a class="btn btn-sm btn-warning" href="#" style="margin-left: 6px; margin-right: 6px;">Edit</a>
-                    <a class="btn btn-sm btn-danger" href="#">Delete</a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>Asraful Haque</td>
-                  <td>haq@gmail.com</td>
-                  <td>01717700811</td>
-                  <td>Mirpur</td>
-                  <td>active</td>
-                  <td>
-                    <a class="btn btn-sm btn-info" href="#">View</a>
-                    <a class="btn btn-sm btn-warning" href="#" style="margin-left: 6px; margin-right: 6px;">Edit</a>
-                    <a class="btn btn-sm btn-danger" href="#">Delete</a>
-                  </td>
-                </tr>
-                
-      
+
               </tbody>
             </table>
           </div>
@@ -120,7 +67,7 @@
   </div>
 </div>
 
-<!-- Modal -->
+<!-- Form-Data-Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content">
@@ -136,7 +83,7 @@
                 Basic Information
               </button>
             </h2>
-            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+            <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
               <div class="accordion-body">
                 <div class="form-group mt-2">
                   <label for="exampleInputEmail1">Partner Name</label>
@@ -293,6 +240,155 @@
             </div>
           </div>
         </div>
+      </div>
+      <div class="modal-footer" style="background: #ebf5fc;"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Update-Form_Modal -->
+<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header" style="background: #ebf5fc;">
+        <h1 class="modal-title fs-5" id="exampleModalLabel1">Create Partner</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        <!-- Basic Information Form -->
+        <div class="form-group mt-2">
+          <label for="exampleInputEmail1">Partner Name</label>
+          <input type="text" class="form-control" placeholder="Enter Name">
+        </div> 
+
+        <div class="form-group mt-2">
+          <label for="exampleInputEmail1">Joining Date</label>
+          <input type="date" class="form-control">
+        </div>
+
+        <div class="form-group mt-2">
+          <label for="exampleInputEmail1">Account Number</label>
+          <input type="text" class="form-control" placeholder="Enter Account Number">
+        </div>
+        
+        <div class="form-group mt-2">
+          <label for="Partner Type">Partner Type</label>
+          <select class="custom-select form-control mb-2" id="inputGroupSelect02">
+            <option selected value="IGW">IGW</option>
+            <option value="ICX">ICX</option>
+            <option value="IOS">IOS</option>
+            <option value="ANS">ANS</option>
+            <option value="INT">INT</option>
+          </select>
+        </div>
+        
+        <div class="form-group mt-2">
+          <label for="Currency">Currency</label>
+          <select class="custom-select form-control mb-2" id="inputGroupSelect02">
+            <option selected value="BDT">BDT</option>
+            <option value="USD">USD</option>
+          </select>
+        </div>
+        
+        <div class="form-group mt-2">
+          <label for="TimeZone">TimeZone</label>
+          <select class="custom-select form-control mb-2" id="inputGroupSelect02">
+            <option selected value="Coordinated Universal Time (UTC)">Coordinated Universal Time (UTC)</option>
+            <option value="Greenwich Mean Time (GMT)">Greenwich Mean Time (GMT)</option>
+            <option value="Eastern Standard Time (EST)">Eastern Standard Time (EST)</option>
+            <option value="Central Standard Time (CST)">Central Standard Time (CST)</option>
+            <option value="Mountain Standard Time (MST)">Mountain Standard Time (MST)</option>
+            <option value="Pacific Standard Time (PST)">Pacific Standard Time (PST)</option>
+            <option value="India Standard Time (IST)">India Standard Time (IST)</option>
+            <option value="China Standard Time (CST)">China Standard Time (CST)</option>
+          </select>
+        </div>
+        
+        <div class="form-group mt-2">
+          <label for="Billing Cycle">Billing Cycle</label>
+          <select class="custom-select form-control mb-2" id="inputGroupSelect02">
+            <option selected value="Monthly">Monthly</option>
+            <option value="Weekly">Weekly</option>
+            <option value="Yearly">Yearly</option>
+          </select>
+        </div>
+        
+        <div class="form-group mt-2">
+          <label for="Status">Status</label>
+          <select class="custom-select form-control mb-2" id="inputGroupSelect02">
+            <option selected value="Active">Active</option>
+            <option value="Inactive">Inactive</option>
+            <option value="Suspended">Suspended</option>
+          </select>
+        </div>
+        <hr style="color: red">
+
+        <!-- Partner Details Form -->
+        <div class="form-group mt-2">
+          <label for="exampleInputEmail1">Partner Phone Number</label>
+          <input type="text" class="form-control" placeholder="Enter Name">
+        </div> 
+  
+        <div class="form-group mb-1 mt-1">
+          <label for="exampleInputEmail1">Partner Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+        </div>
+        
+        <div class="form-group mb-1 mt-1">
+          <label for="exampleInputEmail1">Partner Notification E-mail</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Notification E-mail">
+        </div>
+
+        <div class="form-group mb-1 mt-1">
+          <label for="VAT Reg Number">VAT Reg Number</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter VAT Reg Number">
+        </div>
+        
+        <div class="form-group mb-1 mt-1">
+          <label for="Currency Rate">Currency Rate</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Currency Rate">
+        </div>
+        
+        <div class="form-group mb-1 mt-1">
+          <label for="Contact Address">Contact Address</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Contact Address">
+        </div>
+        
+        <div class="form-group mb-1 mt-1">
+          <label for="Billing Address">Billing Address</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Billing Address">
+        </div>
+        <hr style="color: red">
+
+        <!-- Account-management form -->
+        <div class="form-group mt-2">
+          <label for="Manager ID">Manager ID</label>
+          <input type="text" class="form-control" placeholder="Enter Manager ID">
+        </div> 
+        
+        <div class="form-group mt-2">
+          <label for="Manager Name">Manager Name</label>
+          <input type="text" class="form-control" placeholder="Enter Manager Name">
+        </div> 
+        
+        <div class="form-group mt-2">
+          <label for="Manager Phone">Manager Phone</label>
+          <input type="text" class="form-control" placeholder="Enter Manager Phone">
+        </div> 
+        
+        <div class="form-group mt-2">
+          <label for="Manager E-mail">Manager E-mail</label>
+          <input type="text" class="form-control" placeholder="Enter Manager E-mail">
+        </div> 
+  
+        <div class="form-group mb-1 mt-1">
+          <label for="System Entry Date">System Entry Date</label>
+          <input type="date" class="form-control">
+        </div>
+
+        <button type="button" class="btn btn-success mt-1">Update</button>
+
       </div>
       <div class="modal-footer" style="background: #ebf5fc;"></div>
     </div>
