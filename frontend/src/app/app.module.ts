@@ -10,6 +10,7 @@ import { DashboardComponent } from './My-Components/dashboard/dashboard.componen
 import { FormsModule } from '@angular/forms';
 import { AngularFireModule } from '@angular/fire/compat'
 import { environment } from 'src/environments/environment';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { environment } from 'src/environments/environment';
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
-    FormsModule
+    FormsModule,
+    NgSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

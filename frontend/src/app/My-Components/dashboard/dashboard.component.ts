@@ -13,11 +13,89 @@ export class DashboardComponent {
   name: string = '';
   date: string = "YYYY-MM-DD";
   number: string = '';
-  partnerType: string = '';
-  currency: string = '';
-  timeZone: string = '';
-  billingCycle: string = '';
-  status: string = '';
+
+  // partnerType Dropdown...!
+  partnerType = [
+    { value: 'IGW', label: 'IGW' },
+    { value: 'ICX', label: 'ICX' },
+    { value: 'IOS', label: 'IOS' },
+    { value: 'ANS', label: 'ANS' },
+    { value: 'INT', label: 'INT' }
+  ];
+
+  //Array initialization
+  partnerType1 = [{}];
+
+  //get partnerType2 Data
+  partnerType2(e:any){
+    var pvalue = e.value;
+    this.partnerType1.includes = pvalue;
+  };
+
+  // partnerType Dropdown....!
+  currency = [
+    { value: 'BDT', label: 'BDT' },
+    { value: 'USD', label: 'USD' }
+  ];
+
+  //Array initialization
+  currency1 = [{}];
+
+  //get currency Data
+  currency2(e:any){
+    var pvalue = e.value;
+    this.currency1.includes = pvalue;
+  };
+
+  // timeZone Dropdown....!
+  timeZone = [
+    { value: 'Eastern Standard Time (EST)', label: 'Eastern Standard Time (EST)' },
+    { value: 'Central Standard Time (CST)', label: 'Central Standard Time (CST)' },
+    { value: 'Mountain Standard Time (MST)', label: 'Mountain Standard Time (MST)' },
+    { value: 'India Standard Time (IST)', label: 'India Standard Time (IST)' },
+    { value: 'China Standard Time (CST)', label: 'China Standard Time (CST)' }
+  ];
+
+  //Array initialization
+  timeZone1 = [{}];
+
+  //get timeZone Data
+  timeZone2(e:any){
+    var pvalue = e.value;
+    this.timeZone1.includes = pvalue;
+  };
+
+  // billingCycle Dropdown....!
+  billingCycle = [
+    { value: 'Monthly', label: 'Monthly' },
+    { value: 'Weekly', label: 'Weekly' },
+    { value: 'Yearly', label: 'Yearly' }
+  ];
+
+  //Array initialization
+  billingCycle1 = [{}];
+
+  //get timeZone Data
+  billingCycle2(e:any){
+    var pvalue = e.value;
+    this.billingCycle1.includes = pvalue;
+  };
+
+  // billingCycle Dropdown....!
+  status = [
+    { value: 'Active', label: 'Active' },
+    { value: 'Inactive', label: 'Inactive' },
+    { value: 'Suspended', label: 'Suspended' }
+  ];
+
+  //Array initialization
+  status1 = [{}];
+
+  //get timeZone Data
+  status2(e:any){
+    var pvalue = e.value;
+    this.status1.includes = pvalue;
+  };
 
   //Type SetUp For Partner Form....!
   partnernumber: string = '';
@@ -37,7 +115,8 @@ export class DashboardComponent {
 
   //Get All Data From BasicInfo Form....!
   basicInfo(){
-    //Name Validate...!
+
+    //PartnerName Validate...!
     if(this.name == ''){
       alert("Please Enter Your Name");
       return;
@@ -56,7 +135,12 @@ export class DashboardComponent {
     const BasicInfo = {
       name: this.name,
       date: this.date,
-      number: this.number
+      number: this.number,
+      partnerType: this.partnerType1.includes,
+      currency: this.currency1.includes,
+      timeZone: this.timeZone1.includes,
+      billingCycle: this.billingCycle1.includes,
+      status: this.status1.includes
     };
     //Database fetch...!
     fetch('http://localhost:5000/api/v1/basicinfo', {

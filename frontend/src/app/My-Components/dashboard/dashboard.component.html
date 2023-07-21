@@ -107,57 +107,25 @@
                   <label for="exampleInputEmail1">Account Number</label>
                   <input type="text" class="form-control" placeholder="Enter Account Number" [(ngModel)]="number">
                 </div>
-                
-                <div class="form-group mt-2">
-                  <label for="Partner Type">Partner Type</label>
-                  <select class="custom-select form-control mb-2" id="inputGroupSelect02" ng-model="selectedOption" ng-options="option.value as option.label for option in options">
-                    <option selected value="IGW">IGW</option>
-                    <option value="ICX">ICX</option>
-                    <option value="IOS">IOS</option>
-                    <option value="ANS">ANS</option>
-                    <option value="INT">INT</option>
-                  </select>
-                </div>
-                
-                <div class="form-group mt-2">
-                  <label for="Currency">Currency</label>
-                  <select class="custom-select form-control mb-2" id="inputGroupSelect02">
-                    <option selected value="BDT">BDT</option>
-                    <option value="USD">USD</option>
-                  </select>
-                </div>
-                
-                <div class="form-group mt-2">
-                  <label for="TimeZone">TimeZone</label>
-                  <select class="custom-select form-control mb-2" id="inputGroupSelect02">
-                    <option selected value="Coordinated Universal Time (UTC)">Coordinated Universal Time (UTC)</option>
-                    <option value="Greenwich Mean Time (GMT)">Greenwich Mean Time (GMT)</option>
-                    <option value="Eastern Standard Time (EST)">Eastern Standard Time (EST)</option>
-                    <option value="Central Standard Time (CST)">Central Standard Time (CST)</option>
-                    <option value="Mountain Standard Time (MST)">Mountain Standard Time (MST)</option>
-                    <option value="Pacific Standard Time (PST)">Pacific Standard Time (PST)</option>
-                    <option value="India Standard Time (IST)">India Standard Time (IST)</option>
-                    <option value="China Standard Time (CST)">China Standard Time (CST)</option>
-                  </select>
-                </div>
-                
-                <div class="form-group mt-2">
-                  <label for="Billing Cycle">Billing Cycle</label>
-                  <select class="custom-select form-control mb-2" id="inputGroupSelect02">
-                    <option selected value="Monthly">Monthly</option>
-                    <option value="Weekly">Weekly</option>
-                    <option value="Yearly">Yearly</option>
-                  </select>
-                </div>
-                
-                <div class="form-group mt-2">
-                  <label for="Status">Status</label>
-                  <select class="custom-select form-control mb-2" id="inputGroupSelect02">
-                    <option selected value="Active">Active</option>
-                    <option value="Inactive">Inactive</option>
-                    <option value="Suspended">Suspended</option>
-                  </select>
-                </div>
+
+                <label for="Partner Type" class="mt-2">Partner Type</label>
+                <ng-select [items]="partnerType" bindLabel="label" bindValue="value" style="border: 3px sloid rgb(147, 25, 25); height: 50%; width: 90%;" (change)="partnerType2($event)" [clearable]="false"></ng-select>
+
+                <label for="Currency" class="mt-2">Currency</label>
+                <ng-select [items]="currency" bindLabel="label" bindValue="value" style="border: 3px sloid rgb(147, 25, 25); height: 50%; width: 90%;" (change)="currency2($event)" [clearable]="false">
+                </ng-select>
+
+                <label for="TimeZone" class="mt-2">TimeZone</label>
+                <ng-select [items]="timeZone" bindLabel="label" bindValue="value" style="border: 3px sloid rgb(147, 25, 25); height: 50%; width: 90%;" (change)="timeZone2($event)" [clearable]="false">
+                </ng-select>
+
+                <label for="Billing Cycle" class="mt-2">Billing Cycle</label>
+                <ng-select [items]="billingCycle" bindLabel="label" bindValue="value" style="border: 3px sloid rgb(147, 25, 25); height: 50%; width: 90%;" (change)="billingCycle2($event)" [clearable]="false">
+                </ng-select>
+
+                <label for="Status" class="mt-2">Status</label>
+                <ng-select [items]="status" bindLabel="label" bindValue="value" style="border: 3px sloid rgb(147, 25, 25); height: 50%; width: 90%; margin-bottom: 10px;" (change)="status2($event)" [clearable]="false">
+                </ng-select>
           
                 <button type="button" class="btn btn-primary mt-1" (click)="basicInfo()">Add</button>
                 <!-- BasicInfo-Form-End -->
