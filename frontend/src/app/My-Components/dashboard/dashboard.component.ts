@@ -133,13 +133,13 @@ export class DashboardComponent {
     }
     //Get Form Info....!
     const BasicInfo = {
-      name: this.name,
-      date: this.date,
-      number: this.number,
-      partnerType: this.partnerType1.includes,
+      partnername: this.name,
+      joining: this.date,
+      accountnumber: this.number,
+      partnertype: this.partnerType1.includes,
       currency: this.currency1.includes,
-      timeZone: this.timeZone1.includes,
-      billingCycle: this.billingCycle1.includes,
+      timezone: this.timeZone1.includes,
+      timebillingcyclezone: this.billingCycle1.includes,
       status: this.status1.includes
     };
     //Database fetch...!
@@ -150,8 +150,17 @@ export class DashboardComponent {
       },
       body: JSON.stringify(BasicInfo)
     }).then(res => res.json()).then(data => {
-      console.log(data);
+      alert(data.message);
     });
+    //Empty value return from user..!
+    this.name = '',
+    this.date = '',
+    this.number = '',
+    this.partnerType1 = [],
+    this.currency = [],
+    this.timeZone = [],
+    this.billingCycle = [],
+    this.status = []
   };
 
   //Get All Data From partnerDetails Form.....!
@@ -193,13 +202,13 @@ export class DashboardComponent {
     }
     //Get Form Info....!
     const PartnerDetailsInfo = {
-      partnernumber: this.partnernumber,
-      partneremail: this.partneremail,
+      partnerphonenumber: this.partnernumber,
+      partneremailaddress: this.partneremail,
       partnernotificationemail: this.partnernotificationemail,
-      partnerVat: this.partnerVat,
-      partnercurrency: this.partnercurrency,
-      partneraddress: this.partneraddress,
-      partnerbillingaddress: this.partnerbillingaddress
+      VATregnumber: this.partnerVat,
+      currencyrate: this.partnercurrency,
+      contactaddress: this.partneraddress,
+      billingaddress: this.partnerbillingaddress
     };
     //Database fetch...!
     fetch('http://localhost:5000/api/v1/partnerdetails', {
@@ -209,8 +218,15 @@ export class DashboardComponent {
       },
       body: JSON.stringify(PartnerDetailsInfo)
     }).then(res => res.json()).then(data => {
-      console.log(data);
+      alert(data.message);
     });
+    this.partnernumber = '';
+    this.partneremail = '';
+    this.partnernotificationemail = '';
+    this.partnerVat = '';
+    this.partnercurrency = '';
+    this.partneraddress = '';
+    this.partnerbillingaddress = '';
   };
 
   //Get All Data From accountManagerInfo Form.....!
@@ -243,10 +259,10 @@ export class DashboardComponent {
     //Get Form Info....!
     const AccountManagerInfo = {
       managerID: this.managerID,
-      managerName: this.managerName,
-      managerPhone: this.managerPhone,
+      managername: this.managerName,
+      managerphone: this.managerPhone,
       manageremail: this.manageremail,
-      systementryDate: this.systementryDate
+      systementrydate: this.systementryDate
     };
     //Database fetch...!
     fetch('http://localhost:5000/api/v1/accountmanagerinfo', {
@@ -256,8 +272,13 @@ export class DashboardComponent {
       },
       body: JSON.stringify(AccountManagerInfo)
     }).then(res => res.json()).then(data => {
-      console.log(data);
+      alert(data.message);
     });
+    this.managerID = '',
+    this.managerName = '',
+    this.managerPhone = '',
+    this.manageremail = '',
+    this.systementryDate = ''
   }
 
   //logout user....!
