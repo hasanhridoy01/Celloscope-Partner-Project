@@ -40,5 +40,5 @@ exports.createInfo = async(req, res, next) => {
       message: "Data Inserted UnSuccessful!",
       error: error.message
     });
-  };
+  }
 };

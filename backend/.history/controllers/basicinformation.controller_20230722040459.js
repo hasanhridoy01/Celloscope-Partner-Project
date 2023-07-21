@@ -22,23 +22,24 @@ exports.getInfo = async(req, res, next) => {
 
 //Create a new info form Database.............!
 exports.createInfo = async(req, res, next) => {
-  try {
-    //Create or Save..!
-    const basicinformation = new Basicinformation(req.body);
-    //Save Data from Database..!
-    const result = await basicinformation.save();
-    //Response Send a message with user...! 
-    res.status(200).json({
-      status: "Successful!",
-      message: "Data Inserted SuccessFul!",
-      data: result
-    });
-  } catch (error) {
-    //If any Error Send a message with user...!
-    res.status(400).json({
-      status: "Failed!",
-      message: "Data Inserted UnSuccessful!",
-      error: error.message
-    });
-  };
+  console.log(req.body);
+  // try {
+  //   //Create or Save..!
+  //   const basicinformation = new Basicinformation(req.body);
+  //   //Save Data from Database..!
+  //   const result = await basicinformation.save();
+  //   //Response Send a message with user...! 
+  //   res.status(200).json({
+  //     status: "Successful!",
+  //     message: "Data Inserted SuccessFul!",
+  //     data: result
+  //   });
+  // } catch (error) {
+  //   //If any Error Send a message with user...!
+  //   res.status(400).json({
+  //     status: "Failed!",
+  //     message: "Data Inserted UnSuccessful!",
+  //     error: error.message
+  //   });
+  // }
 };
