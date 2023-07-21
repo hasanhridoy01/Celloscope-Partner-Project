@@ -4,7 +4,11 @@ const mongoose = require("mongoose");
 const basicinformationSchema = mongoose.Schema({
   partnername: {
     type: String,
-    required: [true, "Please provide a Partner Name!"]
+    required: [true, "Please provide a Partner Name!"],
+    trim: true,
+    unique: [true, "Name must be unique"],
+    minLength: [5, "Name must be at least 3 character!"],
+    maxLength: [100, "Name is to large!"]
   },
   joining: {
     name: String,
@@ -16,37 +20,25 @@ const basicinformationSchema = mongoose.Schema({
   },
   partnertype: {
     type: String,
-    required: [true, "Please provide a Partner Type"],
-    enum: {
-      values: ["IGW","ICX","IOS","ANS","INT"]
-    }
+    required: [true, "Please provide a Partner Type"]
   },
   currency: {
     type: String,
-    required: [true, "Please provide a Currency"],
-    enum: {
-      values: ["BDT","USD"]
-    }
+    required: [true, "Please provide a Currency"]
   },
   timezone: {
     type: String,
-    required: [true, "Please provide TimeZone"],
-    enum: {
-      values: ["Eastern Standard Time (EST)","Central Standard Time (CST)","Mountain Standard Time (MST)","India Standard Time (IST)","China Standard Time (CST)"]
-    }
+    required: [true, "Please provide TimeZone"]
   },
   timebillingcyclezone: {
     type: String,
-    required: [true, "Please provide TimeZone"],
-    enum: {
-      values: ["Monthly","Weekly","Yearly"]
-    }
+    required: [true, "Please provide TimeZone"]
   },
   status: {
     type: String,
     required: [true, "Please you have status this info"],
     enum: {
-      values: ["Active","Inactive","Suspended"],
+      values: ["active","inactive","suspended"],
       message: "Status can't"
     }
   },

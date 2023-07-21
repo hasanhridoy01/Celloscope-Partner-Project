@@ -36,10 +36,10 @@ exports.createAccoutManagerInfo = async(req, res, next) => {
   } catch (error) {
     //If any Error Send a message with user...!
     console.log(error);
-    res.status(400).json({
-      status: "Failed!",
-      message: "Data Inserted UnSuccessful!",
-      error: error.message
-    });
+    // res.status(400).json({
+    //   status: "Failed!",
+    //   message: "Data Inserted UnSuccessful!",
+    //   error: error.message
+    // });
   }
 };

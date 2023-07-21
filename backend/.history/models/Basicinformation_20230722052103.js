@@ -4,7 +4,9 @@ const mongoose = require("mongoose");
 const basicinformationSchema = mongoose.Schema({
   partnername: {
     type: String,
-    required: [true, "Please provide a Partner Name!"]
+    required: [true, "Please provide a Partner Name!"],
+    minLength: [5, "Name must be at least 3 character!"],
+    maxLength: [100, "Name is to large!"]
   },
   joining: {
     name: String,

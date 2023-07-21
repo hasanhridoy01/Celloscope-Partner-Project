@@ -1,14 +1,14 @@
-const PartnerDetails = require('../models/PartnerDetails');
+const Basicinformation = require('../models/Basicinformation');
 
-//Get all PartnerDetails from Database...............!
-exports.getPartnerDetails = async(req, res, next) => {
+//Get all info from Database...............!
+exports.getInfo = async(req, res, next) => {
   try {
-    const partnerDetails = await PartnerDetails.find({});
+    const basicinformation = await Basicinformation.find({});
     //Response Send a message with user...!
     res.status(200).json({
       status: 'Successful!',
       message: 'your info has been taken',
-      data: partnerDetails
+      data: basicinformation
     });
   } catch (error) {
     //If any Error Send a message with user...!
@@ -20,13 +20,13 @@ exports.getPartnerDetails = async(req, res, next) => {
   };
 };
 
-//Create a new PartnerDetails form Database.............!
-exports.createPartnerDetails = async(req, res, next) => {
+//Create a new info form Database.............!
+exports.createInfo = async(req, res, next) => {
   try {
     //Create or Save..!
-    const partnerDetails = new PartnerDetails(req.body);
+    const basicinformation = new Basicinformation(req.body);
     //Save Data from Database..!
-    const result = await partnerDetails.save();
+    const result = await basicinformation.save();
     //Response Send a message with user...! 
     res.status(200).json({
       status: "Successful!",
@@ -36,10 +36,10 @@ exports.createPartnerDetails = async(req, res, next) => {
   } catch (error) {
     //If any Error Send a message with user...!
     console.log(error)
-    res.status(400).json({
-      status: "Failed!",
-      message: "Data Inserted UnSuccessful!",
-      error: error.message
-    });
-  }
+    // res.status(400).json({
+    //   status: "Failed!",
+    //   message: "Data Inserted UnSuccessful!",
+    //   error: error.message
+    // });
+  };
 };
