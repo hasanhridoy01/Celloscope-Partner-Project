@@ -95,22 +95,22 @@
                 <!-- BasicInfo-Form-Start -->
                 <div class="form-group mt-2">
                   <label for="exampleInputEmail1">Partner Name</label>
-                  <input type="text" class="form-control" placeholder="Enter Name">
+                  <input type="text" class="form-control" placeholder="Enter Name" [(ngModel)]="name">
                 </div> 
 
                 <div class="form-group mt-2">
                   <label for="exampleInputEmail1">Joining Date</label>
-                  <input type="date" class="form-control">
+                  <input type="date" class="form-control" [(ngModel)]="date">
                 </div>
 
                 <div class="form-group mt-2">
                   <label for="exampleInputEmail1">Account Number</label>
-                  <input type="text" class="form-control" placeholder="Enter Account Number">
+                  <input type="text" class="form-control" placeholder="Enter Account Number" [(ngModel)]="number">
                 </div>
                 
                 <div class="form-group mt-2">
                   <label for="Partner Type">Partner Type</label>
-                  <select class="custom-select form-control mb-2" id="inputGroupSelect02">
+                  <select class="custom-select form-control mb-2" id="inputGroupSelect02" ng-model="selectedOption" ng-options="option.value as option.label for option in options">
                     <option selected value="IGW">IGW</option>
                     <option value="ICX">ICX</option>
                     <option value="IOS">IOS</option>
@@ -177,37 +177,37 @@
                 <!-- PartnerDetails-Form-Start -->
                 <div class="form-group mt-2">
                   <label for="exampleInputEmail1">Partner Phone Number</label>
-                  <input type="text" class="form-control" placeholder="Enter Name">
+                  <input type="text" class="form-control" placeholder="Enter Name" [(ngModel)]="partnernumber">
                 </div> 
           
                 <div class="form-group mb-1 mt-1">
                   <label for="exampleInputEmail1">Partner Email address</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" [(ngModel)]="partneremail">
                 </div>
                 
                 <div class="form-group mb-1 mt-1">
                   <label for="exampleInputEmail1">Partner Notification E-mail</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Notification E-mail">
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Notification E-mail" [(ngModel)]="partnernotificationemail">
                 </div>
 
                 <div class="form-group mb-1 mt-1">
                   <label for="VAT Reg Number">VAT Reg Number</label>
-                  <input type="text" class="form-control" placeholder="Enter VAT Reg Number">
+                  <input type="text" class="form-control" placeholder="Enter VAT Reg Number" [(ngModel)]="partnerVat">
                 </div>
                 
                 <div class="form-group mb-1 mt-1">
                   <label for="Currency Rate">Currency Rate</label>
-                  <input type="text" class="form-control" placeholder="Enter Currency Rate">
+                  <input type="text" class="form-control" placeholder="Enter Currency Rate" [(ngModel)]="partnercurrency">
                 </div>
                 
                 <div class="form-group mb-1 mt-1">
                   <label for="Contact Address">Contact Address</label>
-                  <input type="text" class="form-control" placeholder="Enter Contact Address">
+                  <input type="text" class="form-control" placeholder="Enter Contact Address" [(ngModel)]="partneraddress">
                 </div>
                 
                 <div class="form-group mb-1 mt-1">
                   <label for="Billing Address">Billing Address</label>
-                  <input type="text" class="form-control" placeholder="Enter Billing Address">
+                  <input type="text" class="form-control" placeholder="Enter Billing Address" [(ngModel)]="partnerbillingaddress">
                 </div>
           
                 <button type="button" class="btn btn-danger mt-1" (click)="partnerDetails()">Add</button>
@@ -228,27 +228,27 @@
                 <!-- AccountManagerInfo-Form-Start -->
                 <div class="form-group mt-2">
                   <label for="Manager ID">Manager ID</label>
-                  <input type="text" class="form-control" placeholder="Enter Manager ID">
+                  <input type="text" class="form-control" placeholder="Enter Manager ID" [(ngModel)]="managerID">
                 </div> 
                 
                 <div class="form-group mt-2">
                   <label for="Manager Name">Manager Name</label>
-                  <input type="text" class="form-control" placeholder="Enter Manager Name">
+                  <input type="text" class="form-control" placeholder="Enter Manager Name" [(ngModel)]="managerName">
                 </div> 
                 
                 <div class="form-group mt-2">
                   <label for="Manager Phone">Manager Phone</label>
-                  <input type="text" class="form-control" placeholder="Enter Manager Phone">
+                  <input type="text" class="form-control" placeholder="Enter Manager Phone" [(ngModel)]="managerPhone">
                 </div> 
                 
                 <div class="form-group mt-2">
                   <label for="Manager E-mail">Manager E-mail</label>
-                  <input type="text" class="form-control" placeholder="Enter Manager E-mail">
+                  <input type="text" class="form-control" placeholder="Enter Manager E-mail" [(ngModel)]="manageremail">
                 </div> 
           
                 <div class="form-group mb-1 mt-1">
                   <label for="System Entry Date">System Entry Date</label>
-                  <input type="date" class="form-control">
+                  <input type="date" class="form-control" [(ngModel)]="systementryDate">
                 </div>
           
                 <button type="button" class="btn btn-success mt-1" (click)="accountManagerInfo()">Add</button>
