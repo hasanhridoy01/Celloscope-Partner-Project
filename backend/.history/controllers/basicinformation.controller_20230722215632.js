@@ -93,8 +93,8 @@ exports.deleteInfo = async(req, res, next) => {
 //Search Basic info from Database...!
 exports.searchInfo = async(req, res, next) => {
   //Get id.....!
-  const id = req.query.q;
-  console.log(id); 
+  const id = req.params.id; 
+  console.log(id)
 
   // try {
   //   const basicinformation = await Basicinformation.deleteOne({ _id: id });
