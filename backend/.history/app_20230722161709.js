@@ -39,11 +39,11 @@ app.use('/api/v1/basicinfo', VerifyJWT, basicRoute);
 
 //PartnerDetails Route....!
 const partnerdetailsRoute = require('./routes/partnerdetails.route');
-app.use('/api/v1/partnerdetails', VerifyJWT, partnerdetailsRoute);
+app.use('/api/v1/partnerdetails', partnerdetailsRoute);
 
 //AccountManagerInfo Route....!
 const accountmanagerinfoRoute = require('./routes/accountmanager.route');
-app.use('/api/v1/accountmanagerinfo', VerifyJWT, accountmanagerinfoRoute);
+app.use('/api/v1/accountmanagerinfo', accountmanagerinfoRoute);
 
 //Test Route
 app.get("/", (rep, res) => {
