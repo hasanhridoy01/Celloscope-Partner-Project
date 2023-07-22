@@ -398,6 +398,23 @@ export class DashboardComponent {
     });
   };
 
+  //SearchData From Database
+  inputValue: string = ''; // Property to store the input value
+  getSearchInputChange() {
+    const InputValue = this.inputValue;
+
+    //Database fetch...!
+    fetch(`http://localhost:5000/api/v1/basicinfo/search?q=${InputValue}`, {
+      method: 'GET',
+      headers: {
+        'content-type': 'application/json',
+        authorization: `Bearer ${localStorage.getItem('token')}`
+      }
+    }).then(res => res.json()).then(data => {
+      console.log(data.message);
+    });
+  }
+
   //logout user....!
   logout(){
     this.auth.logout();

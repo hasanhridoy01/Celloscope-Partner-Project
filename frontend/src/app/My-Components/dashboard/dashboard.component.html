@@ -34,7 +34,7 @@
             <button type="button" class="btn btn-outline-danger mb-2 mt-1" data-bs-toggle="modal" data-bs-target="#exampleModal">Add New Partner</button>
             <!-- Search-Form -->
             <div class="">
-              <input class="form-control" type="search" placeholder="Search Here" aria-label="Search" style="width: 160px; float: right;">
+              <input class="form-control" type="search" placeholder="Search Here" aria-label="Search" style="width: 160px; float: right;" [(ngModel)]="inputValue" (ngModelChange)="getSearchInputChange()">
             </div>
             <h2>All Data</h2>
             <table class="table table-striped">
