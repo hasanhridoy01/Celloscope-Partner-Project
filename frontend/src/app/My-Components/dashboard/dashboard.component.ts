@@ -9,8 +9,13 @@ import { AuthService } from 'src/app/Shared/auth.service';
 export class DashboardComponent {
   constructor(private auth: AuthService)
   { 
-    this.getAllAccountManager();
+    this.getAllBasicInfo();
+    this.BasicUpdateData;
   }
+
+  //Declearning a Array for Basic Form...!
+  BasicArray: any[] = [];
+  BasicUpdateData: any [] = [];
 
   //Type SetUp For Basic Form....!
   name: string = '';
@@ -154,7 +159,9 @@ export class DashboardComponent {
       },
       body: JSON.stringify(BasicInfo)
     }).then(res => res.json()).then(data => {
+      console.log(data.error);
       alert(data.message);
+      this.getAllBasicInfo();
     });
     //Empty value return from user..!
     this.name = '',
@@ -300,9 +307,10 @@ export class DashboardComponent {
       if(res.status === 401 || res.status === 403){
         this.logout();
       }
-      return res.json();
+      return res.json()
     }).then(data => {
       console.log(data.data);
+      this.BasicArray = data.data;
     });
   };
 
@@ -341,6 +349,52 @@ export class DashboardComponent {
       return res.json();
     }).then(data => {
       console.log(data.data);
+    });
+  };
+  
+  //UpdateData From Database
+  getUpdate(data: any){
+    //get all data
+    this.name = data.partnername,
+    this.date = data.date,
+    this.number = data.number,
+    this.partnerType1 = data.partnerType1,
+    this.currency = data.currency,
+    this.timeZone = data.timeZone,
+    this.billingCycle = data.billingCycle,
+    this.status = data.status
+
+    //Get Id
+    const id = data._id;
+    
+    //Database fetch...!
+    fetch(`http://localhost:5000/api/v1/basicinfo/${id}`, {
+      method: 'GET',
+      headers: {
+        'content-type': 'application/json',
+        authorization: `Bearer ${localStorage.getItem('token')}`
+      }
+    }).then(res => res.json()).then(data => {
+      console.log(data.data);
+      this.BasicUpdateData = data.data;
+    });
+  };
+
+  //Delete From Database
+  Delete(data: any){
+    //Get Id
+    const id = data._id;
+    
+    //Database fetch...!
+    fetch(`http://localhost:5000/api/v1/basicinfo/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'content-type': 'application/json',
+        authorization: `Bearer ${localStorage.getItem('token')}`
+      }
+    }).then(res => res.json()).then(data => {
+      alert(data.message);
+      this.getAllBasicInfo();
     });
   };
 

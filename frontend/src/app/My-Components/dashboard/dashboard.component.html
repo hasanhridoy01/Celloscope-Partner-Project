@@ -40,27 +40,27 @@
             <table class="table table-striped">
               <thead>
                 <tr>
-                  <th>#</th>
-                  <th>Name</th>
-                  <th>Email</th>
-                  <th>Cell</th>
-                  <th>Address</th>
+                  <th>Partner Name</th>
+                  <th>Currency</th>
+                  <th>Account Number</th>
+                  <th>Partner Type</th>
+                  <th>Billing Cycle</th>
                   <th>Status</th>
                   <th>Action</th>
                 </tr>
               </thead>
               <tbody>
 
-                <tr>
-                  <td></td>
-                  <td>Asraful Haque</td>
-                  <td>haq@gmail.com</td>
-                  <td>01717700811</td>
-                  <td>Mirpur</td>
-                  <td>active</td>
+                <tr *ngFor="let BasicInfo of BasicArray">
+                  <td>{{ BasicInfo.partnername }}</td>
+                  <td>{{ BasicInfo.currency }}</td>
+                  <td>{{ BasicInfo.accountnumber }}</td>
+                  <td>{{ BasicInfo.partnertype }}</td>
+                  <td>{{ BasicInfo.timebillingcyclezone }}</td>
+                  <td>{{ BasicInfo.status }}</td>
                   <td>
-                    <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal1" style="margin-left: 5px; margin-right: 5px;">Edit</button>
-                    <a class="btn btn-sm btn-danger" href="#">Delete</a>
+                    <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal1" style="margin-left: 5px; margin-right: 5px;" (click)="getUpdate(BasicInfo)">Edit</button>
+                    <button type="button" class="btn btn-sm btn-danger" style="margin-left: 5px; margin-right: 5px;" (click)="Delete(BasicInfo)">Delete</button>
                   </td>
                 </tr>
 
@@ -237,10 +237,10 @@
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header" style="background: #ebf5fc;">
-        <h1 class="modal-title fs-5" id="exampleModalLabel1">Create Partner</h1>
+        <h1 class="modal-title fs-5" id="exampleModalLabel1">Update Partner</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body" *ngIf="BasicUpdateData">
 
         <!-- Basic Information Form -->
         <div class="form-group mt-2">
