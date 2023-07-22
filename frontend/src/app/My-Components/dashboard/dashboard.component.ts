@@ -7,7 +7,10 @@ import { AuthService } from 'src/app/Shared/auth.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
-  constructor(private auth: AuthService){ }
+  constructor(private auth: AuthService)
+  { 
+    this.getAllAccountManager();
+  }
 
   //Type SetUp For Basic Form....!
   name: string = '';
@@ -146,7 +149,8 @@ export class DashboardComponent {
     fetch('http://localhost:5000/api/v1/basicinfo', {
       method: 'POST',
       headers: {
-        'content-type': 'application/json'
+        'content-type': 'application/json',
+        authorization: `Bearer ${localStorage.getItem('token')}`,
       },
       body: JSON.stringify(BasicInfo)
     }).then(res => res.json()).then(data => {
@@ -214,7 +218,8 @@ export class DashboardComponent {
     fetch('http://localhost:5000/api/v1/partnerdetails', {
       method: 'POST',
       headers: {
-        'content-type': 'application/json'
+        'content-type': 'application/json',
+        authorization: `Bearer ${localStorage.getItem('token')}`,
       },
       body: JSON.stringify(PartnerDetailsInfo)
     }).then(res => res.json()).then(data => {
@@ -268,7 +273,8 @@ export class DashboardComponent {
     fetch('http://localhost:5000/api/v1/accountmanagerinfo', {
       method: 'POST',
       headers: {
-        'content-type': 'application/json'
+        'content-type': 'application/json',
+        authorization: `Bearer ${localStorage.getItem('token')}`,
       },
       body: JSON.stringify(AccountManagerInfo)
     }).then(res => res.json()).then(data => {
@@ -279,7 +285,64 @@ export class DashboardComponent {
     this.managerPhone = '',
     this.manageremail = '',
     this.systementryDate = ''
-  }
+  };
+
+  //Get all BasicInFormation Data Form Database
+  getAllBasicInfo(){
+    //Database fetch...!
+    fetch('http://localhost:5000/api/v1/basicinfo', {
+      method: 'GET',
+      headers: {
+        'content-type': 'application/json',
+        authorization: `Bearer ${localStorage.getItem('token')}`,
+      },
+    }).then(res => {
+      if(res.status === 401 || res.status === 403){
+        this.logout();
+      }
+      return res.json();
+    }).then(data => {
+      console.log(data.data);
+    });
+  };
+
+  //Get all PartnerDetails Data Form Database
+  getAllPartnerDetails(){
+    //Database fetch...!
+    fetch('http://localhost:5000/api/v1/partnerdetails', {
+      method: 'GET',
+      headers: {
+        'content-type': 'application/json',
+        authorization: `Bearer ${localStorage.getItem('token')}`,
+      },
+    }).then(res => {
+      if(res.status === 401 || res.status === 403){
+        this.logout();
+      }
+      return res.json();
+    }).then(data => {
+      console.log(data.data);
+    });
+  };
+
+   //Get all AccountManager Data Form Database
+   getAllAccountManager(){
+    //Database fetch...!
+    fetch('http://localhost:5000/api/v1/accountmanagerinfo', {
+      method: 'GET',
+      headers: {
+        'content-type': 'application/json',
+        authorization: `Bearer ${localStorage.getItem('token')}`,
+      },
+    }).then(res => {
+      if(res.status === 401 || res.status === 403){
+        this.logout();
+      }
+      return res.json();
+    }).then(data => {
+      console.log(data.data);
+    });
+  };
 
   //logout user....!
   logout(){
