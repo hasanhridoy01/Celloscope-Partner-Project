@@ -6,9 +6,6 @@ const basicController = require('../controllers/basicinformation.controller');
 router.route('/')
 .get(basicController.getInfo)
 .post(basicController.createInfo)
-
-router.route('/:id')
-.get(basicController.getupdateInfo)
-.delete(basicController.deleteInfo)
+.patch(basicController.updateInfo)
 
 module.exports = router;

@@ -3,12 +3,9 @@ const router = express.Router();
 const basicController = require('../controllers/basicinformation.controller');
 
 //Basic Router
-router.route('/')
+router.route('/id')
 .get(basicController.getInfo)
 .post(basicController.createInfo)
-
-router.route('/:id')
-.get(basicController.getupdateInfo)
-.delete(basicController.deleteInfo)
+.patch(basicController)
 
 module.exports = router;

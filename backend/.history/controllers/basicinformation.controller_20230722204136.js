@@ -70,7 +70,7 @@ exports.getupdateInfo = async(req, res, next) => {
 //Delete Basic info from Database...!
 exports.deleteInfo = async(req, res, next) => {
   //Get id.....!
-  const id = req.params.id; 
+  const id = req.params.id;
 
   try {
     const basicinformation = await Basicinformation.deleteOne({ _id: id });

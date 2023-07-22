@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const dotenv = require("dotenv").config();
 const colors = require("colors");
- 
+
 //require app page
 const app = require("./app");
 

@@ -35,7 +35,8 @@ app.post('/jwt', (req, res) => {
 
 //BasicInfo Route....!
 const basicRoute = require('./routes/basicinformation.route');
-app.use('/api/v1/basicinfo/', VerifyJWT, basicRoute)
+app.use('/api/v1/basicinfo/', basicRoute)
+app.patch('/api/v1/basicinfo/:UpdateID', basicRoute)
 
 //PartnerDetails Route....!
 const partnerdetailsRoute = require('./routes/partnerdetails.route');

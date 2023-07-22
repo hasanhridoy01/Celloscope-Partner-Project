@@ -50,7 +50,7 @@ exports.getupdateInfo = async(req, res, next) => {
   const id = req.params.id;
 
   try {
-    const basicinformation = await Basicinformation.findOne({ _id: id });
+    const basicinformation = await Basicinformation.find({ _id: id });
     //Response Send a message with user...!
     res.status(200).json({
       status: 'Successful!',
@@ -70,10 +70,10 @@ exports.getupdateInfo = async(req, res, next) => {
 //Delete Basic info from Database...!
 exports.deleteInfo = async(req, res, next) => {
   //Get id.....!
-  const id = req.params.id; 
+  const id = req.params.id;
 
   try {
-    const basicinformation = await Basicinformation.deleteOne({ _id: id });
+    const basicinformation = await Basicinformation.delete({ _id: id });
     //Response Send a message with user...!
     res.status(200).json({
       status: 'Successful!',

@@ -7,8 +7,4 @@ router.route('/')
 .get(basicController.getInfo)
 .post(basicController.createInfo)
 
-router.route('/:id')
-.get(basicController.getupdateInfo)
-.delete(basicController.deleteInfo)
-
 module.exports = router;
