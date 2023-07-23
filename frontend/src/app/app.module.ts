@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { AngularFireModule } from '@angular/fire/compat'
 import { environment } from 'src/environments/environment';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { SinglePartnerComponent } from './My-Components/single-partner/single-partner.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { NgSelectModule } from '@ng-select/ng-select';
     RegistrationComponent,
     LoginComponent,
     SocialLoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    SinglePartnerComponent
   ],
   imports: [
     BrowserModule,

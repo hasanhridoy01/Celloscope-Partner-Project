@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/Shared/auth.service';
 
 @Component({
@@ -7,7 +8,9 @@ import { AuthService } from 'src/app/Shared/auth.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
-  constructor(private auth: AuthService)
+  partnerId: string = '';
+
+  constructor(private auth: AuthService, private router: Router)
   { 
     this.getAllBasicInfo();
     this.BasicUpdateData;
@@ -354,30 +357,21 @@ export class DashboardComponent {
   
   //UpdateData From Database
   getUpdate(data: any){
-    //get all data
-    this.name = data.partnername,
-    this.date = data.date,
-    this.number = data.number,
-    this.partnerType1 = data.partnerType1,
-    this.currency = data.currency,
-    this.timeZone = data.timeZone,
-    this.billingCycle = data.billingCycle,
-    this.status = data.status
-
     //Get Id
     const id = data._id;
+
+    this.router.navigate(['/singlepartner/ID', id]);
     
-    //Database fetch...!
-    fetch(`http://localhost:5000/api/v1/basicinfo/${id}`, {
-      method: 'GET',
-      headers: {
-        'content-type': 'application/json',
-        authorization: `Bearer ${localStorage.getItem('token')}`
-      }
-    }).then(res => res.json()).then(data => {
-      console.log(data.data);
-      this.BasicUpdateData = data.data;
-    });
+    // //Database fetch...!
+    // fetch(`http://localhost:5000/api/v1/basicinfo/${id}`, {
+    //   method: 'GET',
+    //   headers: {
+    //     'content-type': 'application/json',
+    //     authorization: `Bearer ${localStorage.getItem('token')}`
+    //   }
+    // }).then(res => res.json()).then(data => {
+    //   this.BasicUpdateData = data.data;
+    // });
   };
 
   //Delete From Database
@@ -400,20 +394,26 @@ export class DashboardComponent {
 
   //SearchData From Database
   inputValue: string = ''; // Property to store the input value
-  getSearchInputChange() {
+  getSearchInputChange() {  
     const InputValue = this.inputValue;
 
+    var data = this.getAllBasicInfo();
+
+    // // Filter data based on the 'name' property matching the 'InputValue'
+    // var filteredData = data.Filter((data) => data.name === InputValue);
+
+    // console.log(filteredData)
+
     //Database fetch...!
-    fetch(`http://localhost:5000/api/v1/basicinfo/search?q=${InputValue}`, {
-      method: 'GET',
-      headers: {
-        'content-type': 'application/json',
-        authorization: `Bearer ${localStorage.getItem('token')}`
-      }
-    }).then(res => res.json()).then(data => {
-      console.log(data.message);
-    });
-  }
+    // fetch(`http://localhost:5000/api/v1/search?=${InputValue}`, {
+    //   method: 'GET',
+    //   headers: {
+    //     'content-type': 'application/json',
+    //   }
+    // }).then(res => res.json()).then(data => {
+    //   console.log(data.message);
+    // });
+  };
 
   //logout user....!
   logout(){
