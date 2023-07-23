@@ -46,8 +46,6 @@ const accountmanagerinfoRoute = require('./routes/accountmanager.route');
 app.use('/api/v1/accountmanagerinfo', VerifyJWT, accountmanagerinfoRoute);
 
 //Search Route.....!
-const searchRoute = require('./routes/search.route');
-app.use('/api/v1/search', searchRoute);
 
 //Test Route
 app.get("/", (rep, res) => {

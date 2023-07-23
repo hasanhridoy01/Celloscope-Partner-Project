@@ -11,4 +11,7 @@ router.route('/:id')
 .get(basicController.getupdateInfo)
 .delete(basicController.deleteInfo)
 
+router.route('/search')
+.get(basicController.searchInfo)
+
 module.exports = router;
