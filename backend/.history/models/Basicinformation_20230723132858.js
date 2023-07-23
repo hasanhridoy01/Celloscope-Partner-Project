@@ -55,7 +55,7 @@ const basicinformationSchema = mongoose.Schema({
     default: Date.now,
   },
   PartnerDetails: [{ type: mongoose.Schema.Types.ObjectId, ref: 'PartnerDetails' }],
-  AccoutManagerInfo: [{ type: mongoose.Schema.Types.ObjectId, ref: 'AccoutManagerInfo' }]
+  accountManagerInfo: [{ type: mongoose.Schema.Types.ObjectId, ref: 'AccountManagerInfo' }]
 },{timestamp: true});
 
 //Create Model.....!
