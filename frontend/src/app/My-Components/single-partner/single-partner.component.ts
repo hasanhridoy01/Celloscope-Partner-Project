@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Injectable } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
  
 @Injectable({
   providedIn: 'root'
@@ -12,9 +12,27 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class SinglePartnerComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute) 
+  { 
+    this.singleData
+  }
+
+  singleData: any;
 
   ngOnInit(): void {
-    alert();
+    const id = this.route.snapshot.params["id"];
+    
+    //Database fetch...!
+    fetch(`http://localhost:5000/api/v1/basicinfo/${id}`, {
+      method: 'GET',
+      headers: {
+        'content-type': 'application/json',
+        authorization: `Bearer ${localStorage.getItem('token')}`
+      }
+    }).then(res => res.json()).then(data => {
+      console.log(data.data);
+      const single = data.data;
+      this.singleData = single;
+    });
   }
 }
